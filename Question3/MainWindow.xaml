@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:ViewModel x:Key="vm" />
+    </Window.Resources>
+    <Grid>
+        <Label Content="URL:" FontSize="20" HorizontalAlignment="Left" Margin="127,103,0,0" VerticalAlignment="Top" Height="41" Width="74"/>
+        <TextBox x:Name="txt1"  HorizontalAlignment="Left" Height="37" Margin="206,107,0,0" TextWrapping="Wrap" 
+                FontSize="20" Text="{Binding Url}" VerticalAlignment="Top" Width="489" />
+        <Label Content="Size:" FontSize="20" HorizontalAlignment="Left" Margin="127,220,0,0" VerticalAlignment="Top" Height="41" Width="74"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,225,0,0" TextWrapping="Wrap" Text="{Binding UrlSize}" FontSize="20" 
+                   VerticalAlignment="Top" Height="36" Width="130"
+                   />
+        <Button x:Name="btn1" Content="StartDispatcher" FontSize="20" HorizontalAlignment="Left" Margin="174,334,0,0" VerticalAlignment="Top"
+                   Command="{Binding MyDelegateDistpatcher}" IsEnabled="{Binding IsEnable}" Width="129"/>
+        <TextBlock HorizontalAlignment="Left" Margin="206,225,0,0" TextWrapping="Wrap" Text="{Binding Loading}" FontSize="20" 
+            VerticalAlignment="Top" Height="36" Width="118"
+                   />
+        <Button x:Name="btn1_Copy" Content="StartAsync" FontSize="20" HorizontalAlignment="Left" Margin="336,334,0,0" VerticalAlignment="Top"
+            Command="{Binding MyDelegateAsync}" IsEnabled="{Binding IsEnable}" Width="140"/>
+        <Label Content="Time it took:" FontSize="20" HorizontalAlignment="Left" Margin="487,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.482,-1.922" Height="36" Width="118"/>
+        <Label Content="{Binding Watch}" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.482,-1.922" Height="36" Width="85" Margin="610,225,0,0"/>
+        <Label Content="Ms" HorizontalAlignment="Left" FontSize="20" Margin="676,225,0,0" VerticalAlignment="Top" Height="41" Width="52"/>
+
+    </Grid>
+</Window>
