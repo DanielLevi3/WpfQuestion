@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <ProgressBar IsIndeterminate="{Binding IsIndeterminate}" Minimum="0" Maximum="5" HorizontalAlignment="Left" Height="36" Margin="114,399,0,0" VerticalAlignment="Top" Width="557" RenderTransformOrigin="0.496,0.512"/>
+        <TextBox HorizontalAlignment="Left" FontSize="20" Height="45" Margin="114,98,0,0" TextWrapping="Wrap" Text="{Binding TxtPath}" VerticalAlignment="Top" Width="504" RenderTransformOrigin="0.5,-0.209"/>
+        <TextBox HorizontalAlignment="Left" FontSize="20" Height="45" Margin="114,217,0,0" TextWrapping="Wrap" Text="{Binding TxtWord}" VerticalAlignment="Top" Width="504" RenderTransformOrigin="0.5,-0.209"/>
+        <Button Content="Search" IsEnabled="{Binding IsEnabled}" FontSize="20" HorizontalAlignment="Left" Margin="330,309,0,0" VerticalAlignment="Top" Width="108" Height="41" Command="{Binding FindFilesBtn}" RenderTransformOrigin="0.85,0.727"/>
+        <ListView x:Name="listview" HorizontalAlignment="Left" Height="236" Margin="114,480,0,0" ItemsSource="{Binding ViewList}" VerticalAlignment="Top" Width="557">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="..." FontSize="20" HorizontalAlignment="Left" Margin="623,98,0,0" VerticalAlignment="Top" Command="{Binding FolderDialogBtn}" Width="48" Height="45"/>
+    </Grid>
+</Window>
